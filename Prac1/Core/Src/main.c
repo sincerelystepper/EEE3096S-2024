@@ -350,7 +350,7 @@ void TIM16_IRQHandler(void)
 
 	// TODO: Change LED pattern
 	// print something
-    current_pattern = (current_pattern + 1) % 9; // Cycle through patterns
+    current_pattern = (current_pattern + 1) % 9; // wrapp around the pattern patterns
     set_led_pattern(led_patterns[current_pattern]);
 
 }
