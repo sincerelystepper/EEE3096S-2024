@@ -119,6 +119,7 @@ int main(void)
 
 
 	// Check pushbuttons to change timer delay
+  //using the set_led_pattern in here
 	if (LL_GPIO_IsInputPinSet(Button0_GPIO_Port, Button0_Pin) == 0) {
 	update_delay_time(200); // 0.5s delay
 	} else if (LL_GPIO_IsInputPinSet(Button1_GPIO_Port, Button1_Pin) == 0) {
@@ -358,7 +359,7 @@ void TIM16_IRQHandler(void)
 // Set LED pattern
 
 // Update timer delay time
-
+/* so here we check the state of the leds and set them according to the pattern*/
 void set_led_pattern(uint8_t pattern) {
     HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, (pattern & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET);
     HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, (pattern & 0x02) ? GPIO_PIN_SET : GPIO_PIN_RESET);
