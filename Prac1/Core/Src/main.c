@@ -121,11 +121,11 @@ int main(void)
 	// Check pushbuttons to change timer delay
   //using the set_led_pattern in here
 	if (LL_GPIO_IsInputPinSet(Button0_GPIO_Port, Button0_Pin) == 0) {
-	update_delay_time(200); // 0.5s delay
+	update_delay_time(100); // 0.5s delay
 	} else if (LL_GPIO_IsInputPinSet(Button1_GPIO_Port, Button1_Pin) == 0) {
-	update_delay_time(500); // 2s delay
+	update_delay_time(250); // 2s delay
 	} else if (LL_GPIO_IsInputPinSet(Button2_GPIO_Port, Button2_Pin) == 0) {
-	update_delay_time(300); // 1s delay
+	update_delay_time(150); // 1s delay
 	} else if (LL_GPIO_IsInputPinSet(Button3_GPIO_Port, Button3_Pin) == 0) {
 	current_pattern = 0; // Reset to pattern 1
 	set_led_pattern(led_patterns[current_pattern]);
